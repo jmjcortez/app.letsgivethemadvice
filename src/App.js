@@ -3,7 +3,7 @@ import styled  from "styled-components";
 import { ThemeProvider } from "@material-ui/core/styles";
 
 import Router from "./routers";
-import { defaultTheme, theme } from "./constants/themes";
+import { theme } from "./constants/themes";
 
 import './App.css';
 import NavigationBar from "./components/navigation-bar";

@@ -3,6 +3,8 @@ import React from "react";
 import {styled, withStyles} from "@material-ui/core/styles";
 
 import Typography from "@material-ui/core/Typography";
+import ThreadPoll from "./thread-poll/";
+import CommentSection from "./comment-section/comment-section.container";
 
 const StyedCurrentThreadContainer = styled('div')({
    maxWidth: '66%',
@@ -47,6 +49,8 @@ export const CurrentThread = props => {
 
            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, dolor quis. Sunt, ut, explicabo, aliquam tenetur ratione tempore quidem voluptates cupiditate voluptas illo saepe quaerat numquam recusandae? Qui, necessitatibus, est!</p>
         </Typography>
+        <ThreadPoll />
+        <CommentSection />
      </StyedCurrentThreadContainer>
   );
 };

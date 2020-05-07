@@ -8,7 +8,8 @@ const StyledHomePageContainer = styled('div')({
 });
 
 export const HomePage = props => {
-  return (
+
+   return (
      <StyledHomePageContainer>
        <CurrentThread />
      </StyledHomePageContainer>

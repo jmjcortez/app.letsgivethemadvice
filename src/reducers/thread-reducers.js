@@ -3,7 +3,17 @@ import {
 } from "../actions/thread-actions";
 
 export const initialState = {
-  currentThread: {}
+  currentThread: {
+    title: '',
+    body: '',
+    datePosted: '',
+    dateCreated: '',
+    aftermath: '',
+    validFrom: '',
+    validUntil: '',
+  },
+  isLoading: false,
+  error: {},
 };
 
 const threadReducer = (state=initialState, action) => {
@@ -21,7 +31,15 @@ const threadReducer = (state=initialState, action) => {
         ...state,
         isLoading: false,
         error: {},
-        currentThread: action.payload
+        currentThread: {
+          title: action.payload.title,
+          body: action.payload.body,
+          datePosted: action.payload.date_posted,
+          dateCreated: action.payload.date_created,
+          aftermath: action.payload.aftermath,
+          validFrom: action.payload.valid_from,
+          validUntil: action.payload.valid_until,
+        }
       }
     };
 

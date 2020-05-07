@@ -13,6 +13,8 @@ export const CommentSection = props => {
      <StyledCommentSectionContainer>
         <CommentField />
         <Comment />
+        <Comment />
+        <Comment />
      </StyledCommentSectionContainer>
   )
 };

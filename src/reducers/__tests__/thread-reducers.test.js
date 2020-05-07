@@ -22,7 +22,15 @@ describe('Thread reducer test', () => {
     expect(
       threadReducer(initialState, action)
     ).toEqual({
-      currentThread: {},
+      currentThread: {
+        title: '',
+        body: '',
+        datePosted: '',
+        dateCreated: '',
+        aftermath: '',
+        validFrom: '',
+        validUntil: '',
+      },
       isLoading: true,
       error: {}
     })
@@ -31,13 +39,29 @@ describe('Thread reducer test', () => {
   it('should assign current thread if fetch current thread successful', () => {
     const action = {
       type: FETCH_CURRENT_THREAD_SUCCESS,
-      payload: { test: true },
+      payload: {
+        title: 'test',
+        body: 'test',
+        datePosted: 'test',
+        dateCreated: 'test',
+        aftermath: 'test',
+        validFrom: 'test',
+        validUntil: 'test',
+      },
     };
 
     expect(
       threadReducer(initialState, action)
     ).toEqual({
-      currentThread: { test: true },
+      currentThread: {
+          title: 'test',
+          body: 'test',
+          datePosted: 'test',
+          dateCreated: 'test',
+          aftermath: 'test',
+          validFrom: 'test',
+          validUntil: 'test',
+      },
       isLoading: false,
       error: {},
     });

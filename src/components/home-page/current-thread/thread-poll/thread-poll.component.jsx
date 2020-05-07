@@ -54,15 +54,30 @@ const StyledPollQuestion = withStyles({
 
 export const ThreadPoll = props => {
 
+   const { currentPoll } = props;
+
+   /*
+
+         {elements.map((value, index) => {
+        return <li key={index}>{value}</li>
+      })}
+    */
+
    return (
       <StyledThreadPollContainer>
          <form>
             <StyledFormControl component='fieldset'>
-               <StyledPollQuestion>What should I do? I am really confused and I don't want to hurt their feelings</StyledPollQuestion>
+               <StyledPollQuestion>{currentPoll.question}</StyledPollQuestion>
 
                <StyledRadioGroup aria-label='vote' name='vote' value='a'>
-                  <StyledChoice value='a' control={<Radio />} label='Lorem ipsum dolor sit amet, fringilla magna in, scelerisque magna. Aliquam quis cursus sem, sit amet sagittis nulla. Pellentesque habitant eros.'/>
-                  <StyledChoice value='b' control={<Radio />} label='There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour'/>
+                  {/*<StyledChoice value='a' control={<Radio />} label='Lorem ipsum dolor sit amet, fringilla magna in, scelerisque magna. Aliquam quis cursus sem, sit amet sagittis nulla. Pellentesque habitant eros.'/>*/}
+                  {/*<StyledChoice value='b' control={<Radio />} label='There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour'/>*/}
+                  {
+                     currentPoll.pollChoices.map(
+                           ({text, num_of_votes}) => {
+                           return (<StyledChoice value='' control={<Radio />} label={text} />)}
+                           )
+                  }
                </StyledRadioGroup>
 
                <StyledVoteHelperText>You can only vote once! Read the comment sections to know what the others are thinking!</StyledVoteHelperText>

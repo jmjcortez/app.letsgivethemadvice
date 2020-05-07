@@ -28,26 +28,19 @@ const StyledDatePosted = withStyles({
 })(Typography);
 
 export const CurrentThread = props => {
-  return (
+
+   const { currentThread } = props;
+
+
+   return (
      <StyedCurrentThreadContainer>
-        <StyledTitle variant="h4">Current Thread</StyledTitle>
+        <StyledTitle variant="h4">{currentThread.title}</StyledTitle>
         <Typography>by Moderators</Typography>
         <StyledHr />
-        <StyledDatePosted>Posted on January 1, 2020 at 12:00 PM</StyledDatePosted>
+        <StyledDatePosted>Posted on: {currentThread.validFrom}</StyledDatePosted>
         <StyledHr />
         <Typography>
-           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, vero, obcaecati, aut, error quam sapiente nemo saepe quibusdam sit excepturi nam quia corporis eligendi eos magni recusandae laborum minus inventore?</p>
-
-           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus.</p>
-
-           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, doloribus, dolorem iusto blanditiis unde eius illum consequuntur neque dicta incidunt ullam ea hic porro optio ratione repellat perspiciatis. Enim, iure!</p>
-
-           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-
-           <p>Someone famous in Source Title</p>
-           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, nostrum, aliquid, animi, ut quas placeat totam sunt tempora commodi nihil ullam alias modi dicta saepe minima ab quo voluptatem obcaecati?</p>
-
-           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, dolor quis. Sunt, ut, explicabo, aliquam tenetur ratione tempore quidem voluptates cupiditate voluptas illo saepe quaerat numquam recusandae? Qui, necessitatibus, est!</p>
+           {currentThread.body}
         </Typography>
         <ThreadPoll />
         <CommentSection />

@@ -1,11 +1,24 @@
 import React from 'react';
-import './App.css';
+import styled  from "styled-components";
+import { ThemeProvider } from "@material-ui/core/styles";
 
 import Router from "./routers";
+import { theme } from "./constants/themes";
+
+import './App.css';
+import NavigationBar from "./components/navigation-bar";
+
+const StyledApp = styled.div`
+`;
 
 function App() {
   return (
-    <Router />
+     <ThemeProvider theme={theme}>
+       <StyledApp className="App">
+          <NavigationBar />
+          <Router />
+       </StyledApp>
+     </ThemeProvider>
   );
 }
 
